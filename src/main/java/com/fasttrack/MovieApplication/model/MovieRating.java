@@ -1,16 +1,14 @@
 package com.fasttrack.MovieApplication.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@AllArgsConstructor
 @Entity
 @Data
-@AllArgsConstructor
 public class MovieRating {
     @Id
     @GeneratedValue
@@ -19,5 +17,9 @@ public class MovieRating {
     private int rating;
     @Column
     private String agency;
+
+    @OneToOne(mappedBy = "movieRating")
+    @JsonIgnore
+    private Movie movie;
 
 }

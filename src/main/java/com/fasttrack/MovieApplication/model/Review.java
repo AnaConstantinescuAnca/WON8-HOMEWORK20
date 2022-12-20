@@ -1,16 +1,16 @@
 package com.fasttrack.MovieApplication.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Data
-@AllArgsConstructor
 public class Review {
     @Id
     @GeneratedValue
@@ -19,4 +19,8 @@ public class Review {
     private String text;
     @Column
     private String reviewer;
+
+    @ManyToOne
+    @JsonIgnore
+    private Movie movie;
 }

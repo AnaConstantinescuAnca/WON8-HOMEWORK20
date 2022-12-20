@@ -8,9 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@AllArgsConstructor
 @Entity
 @Data
-@AllArgsConstructor
 public class Actor {
     @Id
     @GeneratedValue

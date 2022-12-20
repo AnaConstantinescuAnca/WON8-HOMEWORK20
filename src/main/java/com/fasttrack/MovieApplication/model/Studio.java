@@ -3,14 +3,12 @@ package com.fasttrack.MovieApplication.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
+@AllArgsConstructor
 @Entity
 @Data
-@AllArgsConstructor
 public class Studio {
     @Id
     @GeneratedValue
@@ -19,5 +17,8 @@ public class Studio {
     private String name;
     @Column
     private String address;
+
+//    @OneToMany(mappedBy = "studio", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+//    private List<Movie> movies;
 
 }

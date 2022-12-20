@@ -7,18 +7,16 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Data
-
 public class Movie {
-    public Movie(Integer id, String name, int year, MovieRating movieRating, List<Review> reviews, Studio studio, List<Actor> actors) {
+    public Movie(Integer id, String name, int year, MovieRating movieRating,  List<Actor> actors) {
         this.id = id;
         this.name = name;
         this.year = year;
         this.movieRating = movieRating;
-        this.reviews = reviews;
-        this.studio = studio;
         this.actors = actors;
     }
 
